@@ -22,7 +22,6 @@ yargs.command({
     }
 })
 
-
 //Create remove command
 yargs.command({
     command: 'remove',
@@ -39,6 +38,15 @@ yargs.command({
     }
 })
 
+
+//Create list command
+yargs.command({
+    command: 'list',
+    describe: 'List out all notes',
+    handler: function() {
+        notes.listNotes()
+    }
+})
 
 
 // console.log(yargs.argv)

@@ -35,6 +35,16 @@ const removeNote = function(title) {
 }
 
 
+const listNotes = () => {
+    const notes = loadNotes()
+    console.log(chalk.blue('Your Notes...'))
+
+    notes.forEach((note) => {
+        console.log(note.title)
+    })
+}
+
+
 const loadNotes = function() {
     try{
         const dataBuffer = fs.readFileSync('notes.json')
@@ -53,5 +63,6 @@ const saveNotes = function(notes) {
 
 module.exports = {
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }
